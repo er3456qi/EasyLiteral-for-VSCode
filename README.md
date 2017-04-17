@@ -14,8 +14,8 @@ Another short key is `ctrl+alt+;`, it can convert a keyvalue sequence to a dict.
 
 The extension use two RegExp to find the text you want to convert(If you do not use the selection mode).
 
-* \`w[-\w\s_']+
-* \`w[(\w+=\+?\w+)\s,]+
+* \`\w[-\w\s_']+
+* \`\w[(\w+=\+?\w+)\s,]+
 
 If you want the extension work right, please make your text match the RegExp. The RegExp may be imperfection, please tell me if you have a better one.
 
