@@ -2,7 +2,7 @@
 
 A tool make literal enter easier. Specifically, it help you quote string.
 
-Features:
+## Features:
 
 The extension can convert `The extension can convert` to `"The", "extension", "can", "convert"`.
 
