@@ -1,24 +1,55 @@
 {
     "name": "easyliteral",
     "displayName": "EasyLiteral",
-    "description": "A tool make literal input easier.",
+    "description": "A tool make literal enter easier.",
     "version": "0.0.1",
     "publisher": "wnbot",
     "engines": {
         "vscode": "^1.11.0"
     },
+    "license": "MIT",
     "categories": [
-        "Other"
+        "Linters"
     ],
+    "bugs": {
+        "url": "https://github.com/er3456qi/EasyLiteral-for-VSCode/issues",
+        "email": "smcbreen@microsoft.com"
+    },
+    "homepage": "https://github.com/er3456qi/EasyLiteral-for-VSCode/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/er3456qi/EasyLiteral-for-VSCode.git"
+    },
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.toarray",
+        "onCommand:extension.todict"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "keybindings": [
+            {
+                "command": "extension.toarray",
+                "key": "ctrl+alt+,",
+                "mac": "cmd+alt+,",
+                "when": "editorFocus"
+            },
+            {
+                "command": "extension.todict",
+                "key": "ctrl+alt+;",
+                "mac": "cmd+alt+;",
+                "when": "editorFocus"
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.toarray",
+                "title": "To quoted array"
+            },
+              {
+                "command": "extension.todict",
+                "title": "To quoted dict"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

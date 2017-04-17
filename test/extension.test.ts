@@ -15,8 +15,16 @@ import * as myExtension from '../src/extension';
 suite("Extension Tests", () => {
 
     // Defines a Mocha unit test
-    test("Something 1", () => {
-        assert.equal(-1, [1, 2, 3].indexOf(5));
-        assert.equal(-1, [1, 2, 3].indexOf(0));
+    test("RegEx 1", () => {
+        const regEx = /`\w[-\w\s_']+/;
+        assert.equal(true, regEx.test('`hello world'));
+        assert.equal(false, regEx.test('hello world'));
+   
+    });
+    test("RegEx 2", () => {
+        const regEx =  /`\w[(\w+=\+?\w+)\s,]+/;
+        assert.equal(true, regEx.test('`a=b c=+d'));
+        assert.equal(true, regEx.test('`a=b,c=+d'));
+        assert.equal(false, regEx.test('abcd'));
     });
 });

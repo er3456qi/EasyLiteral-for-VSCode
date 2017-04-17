@@ -1,65 +1,29 @@
 # easyliteral README
 
-This is the README for your extension "easyliteral". After writing up a brief description, we recommend including the following sections.
+A tool make literal enter easier. Specifically, it help you quote string.
 
-## Features
+Features:
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The extension can convert `The extension can convert` to `"The", "extension", "can", "convert"`.
 
-For example if there is an image subfolder under your extension project workspace:
+Or, convert `a=b c=d,e=+f` to `"a": "b", "c": "d", "e": f`, the `+` mean you do not want to quote the value.
 
-\!\[feature X\]\(images/feature-x.png\)
+The first short key is 'ctrl+alt+,'(convert a word senquence to a string array), you can select the sentense and then press the short key to convert it. Or, just add a '\`' symbol before the sequence you want to convert, like '\`The extension can convert', and press the short key.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Another short key is `'ctrl+alt+;'`, it can convert a keyvalue sequence to a dict.
 
-## Requirements
+The extension use two RegExp to find the text you want to convert(If you do not use the selection mode).
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* `\`\w[-\w\s_']+`
+* `\`\w[(\w+=\+?\w+)\s,]+`
 
-## Extension Settings
+If you want the extension work right, please make your text match the RegExp. The RegExp may be imperfection, please tell me if you have a better one.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+I am thinking put the RegExp to settings so you can custom it, but we just want quote some string text, right? Why to complicate it?
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+first version, basic function.
