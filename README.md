@@ -2,6 +2,8 @@
 
 A tool make literal enter easier. Specifically, it help you quote string.
 
+[IntelliJ version](https://github.com/er3456qi/EasyLiteral)
+
 ## Features:
 
 The extension can convert `The extension can convert` to `"The", "extension", "can", "convert"`.
